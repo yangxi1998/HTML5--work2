@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#playaudio1{
+				margin-left:100px;
+			}
+			#playaudio2{
+				margin-left:85px
+			}
+		</style>
+	</head>
+	<article>
+		千千厥歌
+		<audio src="2.mp3" id="audio1">
+		</audio>
+		<input type='button' value="播放" id="playaudio1"/>
+		<br/>
+		思念人之屋
+		<audio src="2.mp3" id="audio2">
+		</audio>
+		<input type='button' value="播放" id="playaudio2"/>
+	</article>
+	<script>
+			var playaudio1= document.getElementById('playaudio1');
+			var audio1 = document.getElementById('audio1');
+			var playaudio2 = document.getElementById('playaudio2');
+			var audio2 = document.getElementById('audio2');
+			playaudio1.onclick=function(){
+				if(playaudio1.value=="播放"){
+					audio1.play();
+					playaudio1.value="暂停";
+					if(playaudio2.value=="暂停"){  //如果2播放，暂停2
+						audio2.pause();
+						playaudio2.value="播放"
+						}
+					}
+				else{
+						audio1.pause();
+						playaudio1.value="播放";	
+					}
+				}
+			playaudio2.onclick=function(){
+				if(playaudio2.value=="播放"){
+					audio2.play();
+					playaudio2.value="暂停";
+					if(playaudio1.value=="暂停"){ ////如果1播放，暂停1
+						audio1.pause();
+						playaudio1.value="播放"
+						}
+					}
+				else{
+						audio2.pause();
+						playaudio2.value="播放";	
+					}
+				}
+	</script>
+</html>
+
+
